@@ -221,10 +221,116 @@ color: white;
 
 /*NEW SHOP CODE*/
 
+/****** LAST EDITED 10:00PM 11/30 FOR FILTER BUTTONS, STILL NEEDS WORK & USES JAVASCRIPT FILE: filter.js, javascript is kept just
+before the closing body tag in html so everything can load before it calls the function */
+/*SHOP.PHP*/
+/* main shop.php wrapper-container:*/
+.shop-container {
+    text-align: center;
+    max-width: 100%;
+    padding: 15px;
+}
 
+/* grid seperation for shop items*/
+.shop-grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /*CHANGED TO FR to keep columns from being manipulated by content inside*/
+  /*  background-color: aqua;*/
+    padding: 10px;
+    margin: auto;
+    max-width: 100%; /*ADDED to stop overflow*/
+    box-sizing: border-box;
+    grid-gap: 2px;
+}
+.shop-grid-container h1 .center{
+}
+#shop-grid-item-filter {
+    background-color: #93E1D8;
+  /*  border: 1px solid blue; */
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    text-align: center;
+}
+#shop-grid-item-main {
+    background-color: #93E1D8;
+  /*   border: 1px solid blue; */
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+    grid-column-start: 2;
+    grid-column-end: 5;
+    overflow: hidden;
+}
+.actualItem {
+    border: 1px solid black;
+    display: inline-block;
+    padding: 5px;
+    min-height: 100px;
+    min-width: 200px;
+    margin:10px;
+    background: #462255;
+    display: none; /*hidden by default until sort button is selected*/
+}
+.actualItem:hover {
+    background: #FFA69E;
+    color: #AA4465;
+}
+.item-content {
+    padding: 2px;
+}
+.item-content p {
+    color: #f1f1f1;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+.item-content img {
+    width: 90%;
+    height: auto;
+    padding: 5px;
+}
 
-
-
+/* filter/sort by divs and styling for shop.php */
+#filterContainer{
+    text-align: center;
+    display: inline-block;
+}
+.show { /*added to filtered elements*/
+    display: inline-block;
+}
+.sortbtn {
+    border: none;
+    outline: none;
+    padding: 12px 16px;
+    cursor: pointer;
+    color: #ffffff;
+    display: block;
+    margin: 10px;
+    background: #462255;
+}
+.sortbtn:active {
+    border: none;
+    outline: none;
+    padding: 12px 16px;
+    cursor: pointer;
+    color: #AA4465;
+    display: block;
+    margin: 10px;
+    background: #FFA69E;
+}
+.sortbtn:hover {
+    border: none;
+    outline: none;
+    padding: 12px 16px;
+    cursor: pointer;
+    color: #AA4465;
+    display: block;
+    margin: 10px;
+    background: #FFA69E;
+}
+/* END OF SHOPPING CONTAINER FOR SHOP.PHP */
 
 /*END OF NEW SHOP CODE*/
 
