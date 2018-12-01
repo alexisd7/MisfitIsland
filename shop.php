@@ -94,11 +94,11 @@
                 <div id="shop-grid-item-filter">
                     <div id="filterContainer">
                         <h2>Sort By:</h2>
-                        <button class="sortbtn active" onlcick="filterSelection('all')"> Show All</button>
-                        <button class="sortbtn" onlick="filterSelection('color')"> Color</button>
-                        <button class="sortbtn" onlick="filterSelection('size')"> Size</button>
-                        <button class="sortbtn" onlick="filterSelection('style')"> Style</button>
-                        <button class="sortbtn" onlick="filterSelection('brand')"> Brand</button>
+                        <button class="sortbtn active" onclick="filterSelection('all')"> Show All</button>
+                        <button class="sortbtn" onclick="filterSelection('color')"> Color</button>
+                        <button class="sortbtn" onclick="filterSelection('size')"> Size</button>
+                        <button class="sortbtn" onclick="filterSelection('style')"> Style</button>
+                        <button class="sortbtn" onclick="filterSelection('brand')"> Brand</button>
                     </div>
                 </div>
                 <div id="shop-grid-item-main">
