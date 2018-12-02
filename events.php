@@ -16,7 +16,21 @@
               <li><a href="shop.php">Shop</a></li>
               <li><a href="about.php">About Us</a></li>
               <li><a class="active" href="events.php">Events</a></li>
-              <li style="float:right"><a href="login.php">Log In</a></li>
+              
+              <?php
+                  session_start();
+                include("dbconnect.php");
+              
+                    if(isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] == 'true') {
+                  ?>
+                    <li style="float:right"><a href="login.php">Log Out</a></li>
+                  <?php
+                    }
+                    else {
+                  ?>
+                    <li style="float:right"><a href="login.php">Log In</a></li>
+                  <?php } ?>
+              
               <li style="float:right"><a href="cart.php">Shopping Cart</a></li>
           </ul>
       </div>

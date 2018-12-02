@@ -16,27 +16,33 @@
               <li><a href="shop.php">Shop</a></li>
               <li><a href="about.php">About Us</a></li>
               <li><a href="events.php">Events</a></li>
-              <li style="float:right"><a href="login.php">Log In</a></li>
+              
+              <?php
+            session_start();
+            include("dbconnect.php");
+              
+                    if(isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] == 'true') {
+                  ?>
+                    <li style="float:right"><a href="login.php">Log Out</a></li>
+                  <?php
+                    }
+                    else {
+                  ?>
+                    <li style="float:right"><a href="login.php">Log In</a></li>
+                  <?php } ?>
+              
               <li class="active" style="float:right"><a href="cart.php">Shopping Cart</a></li>
           </ul>
       </div>
-
-        Shopping Cart
-        <div class="hero">
-            <h1 class="center">Hero Image</h1>
-        </div>
-        <div class="deals">
-            <div class="deals-grid-container">
-                <div class="deals-grid-item"></div>
-                <div class="deals-grid-item"></div>
-                <div class="deals-grid-item"></div>
-                <div class="deals-grid-item"></div>
-                <div class="deals-grid-item"></div>
-                <div class="deals-grid-item"></div>
-            </div>
-        </div>
-        <div class="app">
-            <p class="center">We have an app!</p>
+        
+        <h1>Your Shopping Cart</h1>
+        
+        <div class="cartlist">
+            <cartlist-item><img class="cartimg" src="img/lolsurprise.jpeg"/>L.O.L. Surprise! Glam Glitter Doll</cartlist-item><br><hr><br>
+            <cartlist-item><img class="cartimg" src="img/litebrite.jpeg"/>Basic Fun Lite Brite Magic Screen Retro Style Toy</cartlist-item><br><hr><br>
+            <cartlist-item><img class="cartimg" src="img/soundofmusic.jpeg"/>The Sound Of Music (50th Anniversary Edition) (Widescreen)</cartlist-item><br><hr><br>
+            <cartlist-item><img class="cartimg" src="img/elf.jpeg"/>Elf (Blu-Ray)</cartlist-item><br><hr><br>
+            <cartlist-item><img class="cartimg" src="img/reindeer.jpeg"/>Home Accents Holiday 52 in. 120-Light LED White Wire Reindeer</cartlist-item><br><hr><br>
         </div>
 
         <div class="footer">

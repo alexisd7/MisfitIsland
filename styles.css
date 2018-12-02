@@ -1,0 +1,568 @@
+/*Code for every page */
+
+body
+{
+  background-color: white;
+  color: black;
+}
+
+h1
+{
+  font-size: 50px;
+}
+
+h2
+{
+  padding: 10px;
+}
+
+/*NAVIGATION BAR*/
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #462255;
+    color: white;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover
+{
+  background-color: #FFA69E;
+  color: black;
+}
+
+li a:active
+{
+  background-color: #FFA69E;
+  color: black;
+}
+
+.active {
+  background-color: #FFA69E;
+  color: black;
+}
+
+/* NOT SURE WHAT THIS IS YET*/
+.right {
+    float: right;
+}
+
+.center {
+    text-align: center;
+}
+
+/* This code is for the footer */
+.footer
+{
+  padding: 20px;
+  text-align: center;
+  background-color: #462255;
+  margin-top: 20px;
+  color: white;
+}
+
+.footer a
+{
+  text-decoration: none;
+}
+
+.flink
+{
+	color: #FFA69E;
+}
+
+.column {
+    float: left;
+    width: 33.33%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.fa
+{
+  padding: 10px;
+  font-size: 20px;
+  width: 20px;
+  text-align: center;
+  text-decoration: none;
+  margin: 0px 2px;
+  border-radius: 50%;
+}
+
+.fa:hover {
+  opacity: 0.7;
+}
+
+
+.fa-twitter {
+background: #55ACEE;
+color: white;
+}
+
+.fa-youtube {
+background: #bb0000;
+color: white;
+}
+
+.fa-instagram {
+background: #125688;
+color: white;
+}
+
+/* END OF FOOTER */
+
+
+/*HOME.PHP*/
+
+
+.header
+{
+    background-color: #f1f1f1;
+    padding: 20px;
+    text-align: center;
+}
+
+
+.button
+{
+    border: 2px solid #462255;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+/*this is for the php code gallary*/
+
+.photo
+  {
+    width: 30%;
+    float: left;
+    margin: 10px;
+    background: #fff;
+    /*padding: 20px;*/
+    box-sizing: border-box;
+  }
+
+  .photo img
+  {
+    width: 200px;
+    height: 450px;
+
+  }
+
+/*app promotion section*/
+
+.container
+{
+  text-align: center;
+  padding: 15px;
+}
+
+.container img
+{
+  width: 250px;
+  height: 200px;
+}
+
+
+.outer
+{
+  padding: 15px;
+}
+
+.outer p
+{
+    font-size: 25px;
+}
+
+.inner
+{
+  margin: 0 auto;
+  max-width: 700px;
+  height: auto;
+  background-color: #93E1D8;
+  border-radius: 3px;
+  padding: 10px;
+}
+
+.bold
+{
+  font-weight: bold;
+}
+
+.rightb
+{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+
+
+/*NEW SHOP CODE*/
+
+/****** LAST EDITED 10:00PM 11/30 FOR FILTER BUTTONS, STILL NEEDS WORK & USES JAVASCRIPT FILE: filter.js, javascript is kept just
+before the closing body tag in html so everything can load before it calls the function */
+/*SHOP.PHP*/
+/* main shop.php wrapper-container:*/
+.shop-container {
+    text-align: center;
+    max-width: 100%;
+    padding: 15px;
+}
+
+/* grid seperation for shop items*/
+.shop-grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /*CHANGED TO FR to keep columns from being manipulated by content inside*/
+  /*  background-color: aqua;*/
+    padding: 10px;
+    margin: auto;
+    max-width: 100%; /*ADDED to stop overflow*/
+    box-sizing: border-box;
+    grid-gap: 2px;
+}
+.shop-grid-container h1 .center{
+}
+#shop-grid-item-filter {
+    background-color: #93E1D8;
+  /*  border: 1px solid blue; */
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    text-align: center;
+}
+#shop-grid-item-main {
+    background-color: #93E1D8;
+  /*   border: 1px solid blue; */
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+    grid-column-start: 2;
+    grid-column-end: 5;
+    overflow: hidden;
+}
+.actualItem {
+    border: 1px solid black;
+    display: inline-block;
+    padding: 5px;
+    min-height: 100px;
+    min-width: 200px;
+    margin:10px;
+    background: #462255;
+    display: none; /*hidden by default until sort button is selected*/
+}
+.actualItem:hover {
+    background: #FFA69E;
+    color: #AA4465;
+}
+.item-content {
+    padding: 2px;
+}
+.item-content p {
+    color: #f1f1f1;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+.item-content img {
+    width: 90%;
+    height: auto;
+    padding: 5px;
+}
+
+/* filter/sort by divs and styling for shop.php */
+#filterContainer{
+    text-align: center;
+    display: inline-block;
+}
+.show { /*added to filtered elements*/
+    display: inline-block;
+}
+.sortbtn {
+    border: none;
+    outline: none;
+    padding: 12px 16px;
+    cursor: pointer;
+    color: #ffffff;
+    display: block;
+    margin: 10px;
+    background: #462255;
+}
+.sortbtn:active {
+    border: none;
+    outline: none;
+    padding: 12px 16px;
+    cursor: pointer;
+    color: #AA4465;
+    display: block;
+    margin: 10px;
+    background: #FFA69E;
+}
+.sortbtn:hover {
+    border: none;
+    outline: none;
+    padding: 12px 16px;
+    cursor: pointer;
+    color: #AA4465;
+    display: block;
+    margin: 10px;
+    background: #FFA69E;
+}
+/* END OF SHOPPING CONTAINER FOR SHOP.PHP */
+
+/*END OF NEW SHOP CODE*/
+
+
+
+
+
+
+
+
+/* OLD SHOP.PHP CODE AS BACKUP*/
+
+/* grid seperation for shop items
+/.shop-grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /*CHANGED TO FR to keep columns from being manipulated by content inside*/
+  /*  background-color: aqua;
+    padding: 10px;
+    margin: auto;
+    max-width: 100%; /*ADDED to stop overflow
+    box-sizing: border-box;
+    grid-gap: 2px;
+}
+
+.shop-grid-item-filter {
+    background-color: #93E1D8;
+  /*  border: 1px solid blue;
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.shop-grid-item-filter a
+{
+    text-decoration: none;
+    font-size: 15px;
+    float: left;
+}
+
+.shop-grid-item-main {
+    background-color: #93E1D8;
+  /*   border: 1px solid blue;
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+    grid-column-start: 2;
+    grid-column-end: 5;
+}
+
+.actual-item {
+    border: 1px solid black;
+    display: inline-block;
+    padding: 5px;
+    min-height: 100px;
+    min-width: 200px;
+    margin:10px;
+}
+
+.item-content {
+    padding: 2px;
+}
+
+.item-content p {
+    color: blue;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+.item-content img {
+    width: 90%;
+    height: auto;
+    padding: 5px;
+}
+
+.filter
+{
+  padding: 20px;
+  padding-top: 0px;
+}
+/* END OF SHOPPING CONTAINER FOR SHOP.PHP */
+
+.deals-grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: aqua;
+    padding: 10px;
+    width: 200px;
+    margin: auto;
+}
+
+.deals-grid-item {
+    background-color: gray;
+    border: 1px solid blue;
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+}
+
+
+/*ABOUTUS.PHP*/
+#hero-container {
+    text-align: center;
+    max-width: 100%;
+    padding: 30px;
+}
+.hero-size-wrapper {
+    max-width: 100%;
+    padding-left: 60px;
+    padding-right: 60px;
+    text-align: center;
+}
+.hero-img {
+    /******* CHANGE OUT PLACEHOLDER IMAGE WITH REAL IMAGE */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("chain-close-up-display-1036857.jpg");
+    max-width: 100%;
+    min-height: 300px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    padding: 10px;
+}
+.hero-txt {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    
+}
+.hero-img h1 {
+    color: white;
+    size: 40px;
+    padding: 10px;
+       
+}
+.hero-img p {
+    color: white;
+    padding: 10px;
+}
+
+#about-container {
+    text-align: center;
+    max-width: 100%;
+    padding: 30px;
+}
+#about-container h2 {
+    color: #462255;
+}
+#about-container p {
+    color: #462255;
+}
+.about-threenested {
+    padding: 20px;
+    margin: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 25px;
+}
+.about-threenested div {
+    border: 1px solid #93E1D8;
+    border-radius: 3px;
+    padding: 20px;
+    margin: 0px;
+}
+.about-inner {
+    padding: 10px;
+    display: block;
+}
+.about-inner h3 {
+    color: #462255;
+}
+.about-inner img {
+    background: #93E1D8;;
+    border-radius: 50px;
+}
+/* END OF ABOUTUS.PHP */
+
+/*EVENTS.PHP*/
+
+
+.outer-div
+{
+  padding: 30px;
+}
+
+.outer-div img
+{
+  display: block;
+   margin-left: auto;
+   margin-right: auto;
+   width: 500px;
+   height:auto;
+   padding: 5px;
+}
+
+
+.inner-div
+{
+  margin: 0 auto;
+  max-width: 700px;
+  height: 100px;
+  background-color: #93E1D8;
+  border-radius: 3px;
+}
+
+.inner-div p
+{
+  padding: 5px;
+}
+
+
+/*SHOPPINGCART.PHP*/
+
+.cartlist {
+    display: grid;
+    grid-template-columns: auto;
+}
+
+.cartimg {
+    width: 200px;
+}
+
+/*LOGIN.PHP*/
+
+/*REGISTER.PHP*/
+
+/*SHOP.PHP*/
+
+.shopimg {
+    width: 20px;
+}

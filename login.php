@@ -22,24 +22,44 @@
           </ul>
       </div>
 
-
         Login
-        <div class="hero">
-            <h1 class="center">Hero Image</h1>
-        </div>
-        <div class="deals">
-            <div class="deals-grid-container">
-                <div class="deals-grid-item"></div>
-                <div class="deals-grid-item"></div>
-                <div class="deals-grid-item"></div>
-                <div class="deals-grid-item"></div>
-                <div class="deals-grid-item"></div>
-                <div class="deals-grid-item"></div>
-            </div>
-        </div>
-        <div class="app">
-            <p class="center">We have an app!</p>
-        </div>
+        <?php
+        
+        session_start();
+        include("dbconnect.php");
+        
+            if(isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] == 'true') {
+                ?>
+                    <div class="form-border">
+                            <form action="logoutform.php" method="POST">
+                                <fieldset>
+                                    <legend class="legend"><h2>Are you sure you want to log out?</h2></legend>
+                                    <input type="submit" name="submit" value="Yes, log out."><br>
+                                </fieldset>
+                            </form><br>
+                        <p><a href="home.php">No, stay logged in.</a></p>
+                        </div>
+
+
+                <?php
+            }
+            else {
+                ?>
+                    <div class="form-border">
+                            <form action="loginform.php" method="POST">
+                                <fieldset>
+                                    <legend class="legend"><h2>Log In</h2></legend>
+                                    <input type="text" name="username" placeholder="Username"><br><br>
+                                    <input type="password" name="password" placeholder="Password"><br><br>
+                                    <input type="submit" name="submit" value="Submit"><br>
+                                </fieldset><br>
+                                <p>Don't have an account? <a href="createaccount.php">Create one!</a></p>
+                            </form>
+                        <br><br><br>
+                        </div>
+                <?php
+            }
+        ?>
 
         <div class="footer">
           <div class="row">

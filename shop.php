@@ -18,7 +18,21 @@
               <li><a class="active" href="shop.php">Shop</a></li>
               <li><a href="about.php">About Us</a></li>
               <li><a href="events.php">Events</a></li>
-              <li style="float:right"><a href="login.php">Log In</a></li>
+              
+              <?php
+                  session_start();
+                include("dbconnect.php");
+
+                    if(isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] == 'true') {
+                  ?>
+                    <li style="float:right"><a href="login.php">Log Out</a></li>
+                  <?php
+                    }
+                    else {
+                  ?>
+                    <li style="float:right"><a href="login.php">Log In</a></li>
+                  <?php } ?>
+              
               <li style="float:right"><a href="cart.php">Shopping Cart</a></li>
           </ul>
       </div>
@@ -104,38 +118,38 @@
                 <div id="shop-grid-item-main">
                     <div class="actualItem color">
                         <div class="item-content">
-                            <img src="#"/><p>^IMAGE HERE</p><br>
-                            <p>//$PRICE HERE</p>
+                            <p>L.O.L. Surprise!</p><img src="img/lolsurprisetn.png"/><br>
+                            <p>$6.88</p>
                         </div>
                     </div>
                     <div class="actualItem color">
                         <div class="item-content">
-                            <img src="#"/><p>^IMAGE HERE</p><br>
-                            <p>//$PRICE HERE</p>
+                            <p>Lite Brite</p><img src="img/litebritetn.png"/><br>
+                            <p>$14.97</p>
                         </div>
                     </div>
                     <div class="actualItem style">
                         <div class="item-content">
-                            <img src="#"/><p>^IMAGE HERE</p><br>
-                            <p>//$PRICE HERE</p>
+                            <p>The Sound of Music</p><img src="img/soundofmusictn.png"/><br>
+                            <p>$9.96</p>
                         </div>
                     </div>
                     <div class="actualItem brand">
                         <div class="item-content">
-                            <img src="#"/><p>^IMAGE HERE</p><br>
-                            <p>//$PRICE HERE</p>
+                            <p>Elf</p><img src="img/elftn.png"/><br>
+                            <p>$12.76</p>
                         </div>
                     </div>
                     <div class="actualItem size">
                         <div class="item-content">
-                            <img src="#"/><p>^IMAGE HERE</p><br>
-                            <p>//$PRICE HERE</p>
+                            <p>LED Reindeer</p><img src="img/reindeertn.png"/><br>
+                            <p>$59.99</p>
                         </div>
                     </div>
                     <div class="actualItem brand">
                         <div class="item-content">
-                            <img src="#"/><p>^IMAGE HERE</p><br>
-                            <p>//$PRICE HERE</p>
+                            <p>USB-C to USB Adapter</p><img src="img/usbadapter.png"/><br>
+                            <p>$17.99</p>
                         </div>
                     </div>
                 </div>
